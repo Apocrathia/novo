@@ -1,0 +1,79 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,user-scalable=0"/>
+  <title>Connect</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <header>
+    <h1>Connect</h1>
+  </header>
+
+  <div class="centercont">
+  
+    <div class="cont">
+   
+      <div class="row final-table">
+        <div class="col"><div class="number-circle">1</div></div>
+        <div class="col">
+          <span class="instructions">Within the next <span id="restartSecs">30</span> seconds, your Virtual 
+              Therapist Bridge will automatically restart.</span>
+        </div>
+      </div>
+
+      <div class="row final-table">
+        <div class="col"><div class="number-circle">2</div></div>
+        <div class="col">
+          <span class="instructions">Within the 3 minutes following that, you 
+              will see your chair light and move briefly, confirming that the 
+              Virtual Therapist setup is complete.</span>
+        </div>
+      </div>
+
+      <div class="row final-table">
+        <div class="col"><div class="number-circle">3</div></div>
+        <div class="col">
+          <div class="instructions">Then go ahead and try:</div>
+          <div class="row final-table-inner">
+            <div class="col">“Alexa, ask <strong>my Novo</strong> to give me a massage.”</div>
+            <div class="col final-img"><img src="novo-profile.jpg"></div>
+          </div>
+        </div>
+      </div>
+   
+    </div>
+  
+  </div>
+
+  <script>
+    var _secs = 30;
+    var _el = document.getElementById('restartSecs');
+    setTimeout(_decrement, 1000);
+    
+    
+    function _decrement() {
+      if (_secs === 0) return;
+      if (_secs === 30) _startFlashing(_el);
+      _secs -= 1;
+      _el.textContent = (_secs < 10 ? '0' : '') + _secs.toString();
+      setTimeout(_decrement, 1000);
+    }
+    
+
+    /* previously the flashing was done in code with the class being 
+       added and removed every second... however this was only working
+       the first time or intermittently in Android Chrome, so moved to 
+       a full CSS solution, where animation-iteration-count: 30 is specified
+       and we HOPE that it always syncs up with the number change */
+    function _startFlashing(element) {
+      //element.classList.remove('quick-flash');
+      //setTimeout(function() { element.classList.add('quick-flash') }, 16);
+      element.classList.add('quick-flash');
+    }
+    
+    
+  </script>
+
+</body>
+</html>

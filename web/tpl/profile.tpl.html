@@ -1,0 +1,44 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,user-scalable=0"/>
+
+  <title>User profile code</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <header>
+    <div class="centercont-with-back">
+      <form class="col spacer" method="post" action="/bluetooth">
+        <button class="back-btn" type="submit">
+          <div class="col chevron back-chevron"></div>
+          <div class="col back-text">BACK</div>
+        </button>
+        <input id="rescan" name="rescan" type="hidden" value="true"/>
+      </form>
+      <h1 class="col">User profile code</h1>
+      <div class="col spacer"></div>
+    </div>
+  </header>
+
+  <div class="centercont">
+    <img src="user-profile.png" width="193" height="147.5">
+ 
+    <div class="cont">
+   
+      <h2>Enter the 6 digit User Profile Code issued when you registered your 
+      Virtual Therapist Account.</h2>
+   
+      <form class="centercont" method="post" action="/wifichoose">
+        <input id="profilecode" name="profilecode" type="text"
+                  autocorrect="off" autocapitalize="characters" 
+                  placeholder="eg ABCD1E"/>
+        <button type="submit">Submit</button>
+      </form>
+      
+    </div>
+
+  </div>
+
+</body>
+</html>

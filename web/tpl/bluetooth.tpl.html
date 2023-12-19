@@ -1,0 +1,104 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,user-scalable=0"/>
+
+  <title>Bluetooth</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <header>
+    <div class="centercont">
+      <h1>Bluetooth</h1>
+    </div>
+  </header>
+
+  <div class="centercont">
+    <img src="Bluetooth.png" width="120" height="120">
+ 
+    <div class="cont">
+   
+      <h2>First we will set-up the Super Novo Bluetooth connection.</h2>
+   
+      <p>Please ensure your chair is powered on and not obstructed.</p>
+
+      {{#if BTSTATESCANNING}}
+      
+        <h3>Scanning for novo bluetooth...</h3>
+        <script>
+          setInterval(_checkBT, 1000);
+          
+          function _checkBT() { 
+            var oReq = new XMLHttpRequest();
+            oReq.addEventListener("load", _postIfBTReady);
+            oReq.open('GET', '/btcheck', /*async*/true);
+            oReq.send();
+          }
+            
+          function _postIfBTReady() {
+            if (this.responseText === 'ready') location.href = '/bluetooth';
+          }
+          
+        </script>
+      
+      {{else if BTSTATECHOOSE}}
+
+        <h3>Scan complete</h3>
+        <p>Select your Super Novo below:</p>
+        
+        {{#if HAVEDEVICES}}
+
+          <form id="novoForm" class="items-cont" method="post" action="/bluetooth">
+            {{#DEVICES}}
+              <div class="item" 
+                        {{#if isNovo}} 
+                        onclick="novoForm.mac.value='{{mac}}';novoForm.submit();"
+                        {{/if}}>
+                <div class="item-name col">{{name}}</div>
+                <div class="item-chevron col">{{#if isNovo}}
+                  <div class="chevron"></div>
+                {{/if}}</div>
+              </div>
+            {{/DEVICES}}
+            <input id="mac" name="mac" type="hidden" value=""/>
+          </form>
+
+        {{else}}
+        
+          <strong>Novo not found. Please try again.</strong>
+          
+        {{/if}}
+        
+        <form id="form-rescan-single" method="post" 
+                  action="/bluetooth">
+          <button class="light-btn" type="submit">Re-scan</button>
+          <input id="rescan" name="rescan" type="hidden" value="true"/>
+        </form>
+
+        
+      {{else}}
+      
+        <h3>Testing connection</h3>
+        <p>Watch for your chair to light-up & move.</p>
+        <hr/>
+        <p>If your chair moved, press the 
+           <span class="highlighttxt">Continue</span> button below.</p>
+        <div class="row">
+          <form id="form-rescan" class="col centercont" method="post" 
+                    action="/bluetooth">
+            <button class="light-btn" type="submit">Re-scan</button>
+            <input id="rescan" name="rescan" type="hidden" value="true"/>
+          </form>
+          <form id="form-continue" class="col centercont" action="/profile">
+            <button type="submit">Continue</button>
+          </form>
+        </div>
+        
+      {{/if}}
+
+    </div>
+
+  </div>
+
+</body>
+</html>

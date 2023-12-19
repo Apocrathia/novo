@@ -1,0 +1,47 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,user-scalable=0"/>
+
+  <title>Connect</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <header>
+    <div class="centercont-with-back">
+      <div class="col spacer">
+        <button class="back-btn" type="button" onclick="location.href='/edit';">
+          <div class="col chevron back-chevron"></div>
+          <div class="col back-text">EDIT</div>
+        </button>
+      </div>
+      <h1 class="col">Connect</h1>
+      <div class="col spacer"></div>
+    </div>
+  </header>
+
+  <div class="centercont">
+
+    <div class="cont">
+   
+      <h2>Please confirm the details below are correct, and press CONNECT.</h2>
+      <p>If you need to edit, press the EDIT button above.</p>
+
+      <hr/>
+   
+      <h2><span class="unbolded">Profile Code:</span> {{PROFILECODE}}</h2>
+      <h2><span class="unbolded">WiFi Network:</span> {{WIFICHOSEN}}</h2>
+      <h2><span class="unbolded">WiFi Password:</span> {{WIFIPWD}}</h2>
+
+      <hr/>
+
+      <form class="centercont pushbtn-down" action="/final">
+        <button type="submit">Connect</button>
+      </form>
+      
+    </div>
+
+  </div>
+
+</body>
+</html>

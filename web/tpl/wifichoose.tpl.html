@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,user-scalable=0"/>
+
+  <title>WiFi</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <header>
+    <div class="centercont-with-back">
+      <div class="col spacer">
+        <button class="back-btn" type="button" onclick="history.back();">
+          <div class="col chevron back-chevron"></div>
+          <div class="col back-text">BACK</div>
+        </button>
+      </div>
+      <h1 class="col">WiFi</h1>
+      <div class="col spacer"></div>
+    </div>
+  </header>
+
+  <div class="centercont">
+    <img src="WiFi.png" width="140" height="92">
+ 
+    <div class="cont">
+   
+      <h2>Please select your WiFi network from the list below:</h2>
+   
+      <p>If the network list is blank, or you don't see your WiFi network, 
+          please unplug the Bridge and plug it back in to start again.</p>
+
+      <form id="novoForm" class="items-cont" method="post" action="/wifipwd">
+        {{#each WIFILIST}}
+          <div class="item" 
+                    onclick="novoForm.ssid.value='{{this}}';novoForm.submit();">
+            <div class="item-name col">{{this}}</div>
+            <div class="item-chevron col">
+              <div class="chevron"></div>
+            </div>
+          </div>
+        {{/each}}
+        <input id="ssid" name="ssid" type="hidden" value=""/>
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

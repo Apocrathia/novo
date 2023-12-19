@@ -1,0 +1,330 @@
+/* COMMON STYLES */
+
+body, h2, p {
+  font-family: arial, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+form {
+  margin: 0; /* only necessary for when .item classes are on form elements; form els carry their own margin by default */
+}
+
+header {
+  display: table;
+  width: 100%;
+  background: #666;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-family: "Arial Narrow", arial, sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  margin: 0;
+}
+
+.centercont,
+.centercont-with-back,
+.centercont img {
+  margin: 0 auto;
+  max-width: 450px;
+}
+
+.centercont-with-back {
+  display: table;
+  width: 100%;
+}
+
+.centercont img {
+  display: block; /* helps to center the image (makes the margin auto work) */
+  margin-top: 20px;
+}
+
+form.centercont {
+  text-align: center;
+}
+
+
+.cont {
+  padding: 10px;
+}
+
+h2,
+.instructions {
+  font-size: 20px;
+  font-weight: bold; /* this is default for h2, but not .instructions */
+}
+
+p {
+
+}
+
+button {
+  text-align: center;
+  padding: 6px 30px;
+  background-color: #FF6633;
+  border: none;
+  border-radius: 100px;
+  font-family: "Arial Narrow", arial, sans-serif;
+  font-size: 16px;
+  color: white;
+  text-transform: uppercase;
+  outline: none;
+}
+
+
+button.light-btn {
+  background-color: white;
+  border: 1px solid #FF6633;
+  color: #FF6633;
+}
+
+button.back-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 0 0 0 5px;
+}
+
+button:focus {
+  outline: none;
+  background-color: #666666;
+}
+
+button.light-btn:focus {
+  border: 1px solid #666666;
+  color: #666666;
+  background-color: white; /* override the button:focus style */
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+.linktext {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  cursor: default;
+}
+
+.spacer { /* width for the back button, but which we also add to the right of the h1 text so that it remains centered (assumes min screen width of 320px */
+  width: 52px;
+}
+
+h3, .highlighttxt {
+  font-family: "Arial Narrow", arial, sans-serif;
+  font-size: 16px;
+  color: #FF6633;
+  text-transform: uppercase;
+  font-weight: bold; /* this is default for h3, but not .highlighttxt */
+}
+
+.items-cont {
+  margin-left: 20px;
+  border-top: 1px solid #FF6633;
+}
+
+.item {
+  padding: 15px 5px;
+  border-bottom: 1px solid #FF6633;
+}
+
+.item:hover { /* will shade the item when finger is down on it or when the mouse is over it */
+  background-color: #EFEFEF;
+}
+
+.row {
+  display: table;
+  width: 100%;
+}
+
+.col {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.item-name {
+  width: 100%;
+}
+
+hr {
+  display: block; 
+  height: 1px;
+  border: 0; 
+  border-top: 1px solid #FF6633;
+  margin: 1em 0;
+  padding: 0; 
+}
+
+.chevron {
+  height: 20px;
+}
+
+.chevron:before, .chevron:after {
+    position: relative;
+    display: block;
+    width: 12px;
+    height: 4px;
+    background-color: #999;
+    content: '';
+}
+
+.chevron:before {
+    top: 5px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.chevron:after {
+    top: 7px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.back-chevron {
+  transform: rotate(180deg);
+}
+
+.chevron.back-chevron:before,
+.chevron.back-chevron:after {
+  background-color: white;
+}
+
+.chevron.back-chevron:before {
+  top: -1px;
+}
+
+.chevron.back-chevron:after {
+  top: 1px;
+}
+
+.back-text {
+  padding-left: 3px;
+}
+
+/* PAGE SPECIFIC STYLES */
+
+/* Bluetooth */
+
+#form-rescan,
+#form-continue {
+  width: 50%;
+}
+
+#form-rescan-single {
+  padding: 20px 0 0px 20px;
+}
+
+
+/* Profile and Wifi Password pages */
+
+#profilecode,
+#wifipwd {
+  width: 100%;
+  display: block;
+  margin-bottom: 80px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+/*#profilecode {
+  text-transform: uppercase;
+}*/
+
+
+/* Confirm (CONNECT) */
+
+.pushbtn-down {
+  margin-top: 60px;
+}
+
+.unbolded { /* unbold part of the H2 which is bolded by default */
+  font-weight: normal;
+}
+
+/* Final */
+
+.number-circle { /* from https://stackoverflow.com/questions/4861224/how-to-use-css-to-surround-a-number-with-a-circle */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background: #fff;
+  border: 2px solid #FF6633;
+  color: #FF6633;
+  text-align: center;
+  font-size: 24px;
+  margin: 10px;
+}
+
+.final-table {
+  border-bottom: 1px solid #666666;
+  border-spacing: 10px;
+}
+
+.final-table-inner {
+  border-spacing: 0; /* otherwise this inner table inherits the outer table's property */
+}
+
+.final-img,
+.final-img img {
+  width: 100px;
+}
+
+@-webkit-keyframes quickFlash {
+  0% {
+    background-color: #FF6633;
+    outline: solid 5px rgba(255, 102, 51, 1);
+    opacity: 1;
+  }
+  100% {
+    background-color: inherit;
+    outline: solid 5px rgba(255, 102, 51, 0);
+  }
+}
+
+@-moz-keyframes quickFlash {
+  0% {
+    background-color: #FF6633;
+    outline: solid 5px rgba(255, 102, 51, 1);
+    opacity: 1;
+  }
+  100% {
+    background-color: inherit;
+    outline: solid 5px rgba(255, 102, 51, 0);
+  }
+}
+
+@keyframes quickFlash {
+  0% {
+    background-color: #FF6633;
+    outline: solid 5px rgba(255, 102, 51, 1);
+    opacity: 1;
+  }
+  100% {
+    background-color: inherit;
+    outline: solid 5px rgba(255, 102, 51, 0);
+  }
+}
+
+.quick-flash {
+  -webkit-animation-name: quickFlash;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-iteration-count: 30;
+  -moz-animation-name: quickFlash;
+  -moz-animation-duration: 1000ms;
+  -moz-animation-timing-function: ease;
+  -moz-animation-iteration-count: 30;
+  animation-name: quickFlash;
+  animation-duration: 1000ms;
+  animation-timing-function: ease;
+  animation-iteration-count: 30;
+}

@@ -1,0 +1,55 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,user-scalable=0"/>
+  <title>Edit Settings</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <header>
+    <h1 class="col">Edit Settings</h1>
+  </header>
+
+ <div class="centercont">
+
+   <div class="cont">
+   
+      <div class="items-cont">
+
+        <form id="editbt" method="post" action="/bluetooth">
+          <div class="item" onclick="editbt.submit();">
+            <div class="item-name col">Bluetooth</div>
+            <div class="item-chevron col"><div class="chevron"></div></div>
+            <input id="rescan" name="rescan" type="hidden" value="true"/>
+          </div>
+        </form>
+
+        <form id="editpc" action="/profile">
+          <div class="item" onclick="editpc.submit();">
+            <div class="item-name col">Profile Code</div>
+            <div class="item-chevron col"><div class="chevron"></div></div>
+          </div>
+        </form>
+
+        <form id="editwifi" method="post" action="/wifichoose">
+          <div class="item" onclick="editwifi.submit();">
+            <div class="item-name col">WiFi</div>
+            <div class="item-chevron col"><div class="chevron"></div></div>
+          </div>
+        </form>
+
+        <form id="editcc" method="post" action="/confirm">
+          <div class="item" onclick="editcc.submit();">
+            <div class="item-name col">Confirm and connect</div>
+            <div class="item-chevron col"><div class="chevron"></div></div>
+          </div>
+        </form>
+
+      </div> 
+      
+    </div>
+
+  </div>
+
+</body>
+</html>

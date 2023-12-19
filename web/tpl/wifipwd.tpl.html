@@ -1,0 +1,44 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,user-scalable=0"/>
+
+  <title>WiFi</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  <header>
+    <div class="centercont-with-back">
+      <div class="col spacer">
+        <button class="back-btn" type="button" onclick="history.back();">
+          <div class="col chevron back-chevron"></div>
+          <div class="col back-text">BACK</div>
+        </button>
+      </div>
+      <h1 class="col">WiFi</h1>
+      <div class="col spacer"></div>
+    </div>
+  </header>
+
+  <div class="centercont">
+    <img src="WiFi.png" width="140" height="92">
+ 
+    <div class="cont">
+   
+      <h2>Enter the WiFi password for:</h2>
+
+      <h2>{{WIFICHOSEN}}</h2>
+   
+      <form class="centercont" method="post" action="/confirm">
+        <input id="wifipwd" name="wifipwd" type="text"
+                  autocapitalize="off" autocorrect="off" 
+                  placeholder="WiFi password"/>
+        <button type="submit">Submit</button>
+      </form>
+      
+    </div>
+
+  </div>
+
+</body>
+</html>

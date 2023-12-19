@@ -1,0 +1,15 @@
+{
+  "apps" : [{
+    "name"          : "novo",
+    "script"        : "server.js",
+    "node_args"     : "--inspect=0.0.0.0:9230",
+    "min_uptime"    : "20s",
+    "max_restarts"  : 3,
+    "error_file"    : "/var/log/pm2.novo.err.log",
+    "out_file"      : "/var/log/pm2.novo.log",
+    "cwd"           : "/home/vagrant/novo/pi/web",
+    "watch"         : ["/home/vagrant/novo/pi/web"],
+    "watch_options" : { "usePolling": true, "interval": 100, "followSymlinks": false },
+    "ignore_watch"  : ["/home/vagrant/novo/pi/web/node_modules"]
+  }]
+}

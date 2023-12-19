@@ -1,0 +1,11 @@
+{
+  "apps" : [{
+    "name"          : "novo",
+    "script"        : "server.js",
+    "min_uptime"    : "20s",
+    "max_restarts"  : 3,
+    "error_file"    : "/home/pi/web/logs/pm2.novo.err.log",
+    "out_file"      : "/home/pi/web/logs/pm2.novo.log",
+    "cwd"           : "/home/pi/web"
+  }]
+}
